@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import br.com.festa.DTO.ClienteDTO;
 import br.com.festa.enums.Pagamento;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,6 +30,7 @@ public class Cliente {
 	private String endereco;
 	private LocalDate dataEvento;
 	private Double total;
+	@Enumerated(EnumType.STRING)
 	private Pagamento pagamento;
 	
 	public Cliente(ClienteDTO clienteDTO) {
